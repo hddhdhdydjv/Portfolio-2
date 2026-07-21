@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Under Maintenance</title>
+  <meta name="description" content="Something new is being built. Check back soon." />
+  <meta name="robots" content="noindex" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:        #0A0A0A;
+      --surface:   #111110;
+      --text-hi:   #F0EFE9;
+      --text-lo:   #52524E;
+      --text-mid:  #8A8A84;
+      --grain-opacity: 0.045;
+    }
+
+    html, body {
+      height: 100%;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text-hi);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+                   Helvetica, Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100dvh;
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* Grain overlay */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: -50%;
+      width: 200%;
+      height: 200%;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      background-size: 180px 180px;
+      opacity: var(--grain-opacity);
+      pointer-events: none;
+      z-index: 0;
+      animation: grain 0.5s steps(2) infinite;
+    }
+
+    @keyframes grain {
+      0%   { transform: translate(0, 0); }
+      25%  { transform: translate(-2%, -4%); }
+      50%  { transform: translate(4%,  2%); }
+      75%  { transform: translate(-2%, 4%); }
+      100% { transform: translate(4%, -2%); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      body::before { animation: none; }
+      .cat         { animation: none !important; }
+    }
+
+    /* Radial glow behind cat */
+    .glow {
+      position: absolute;
+      width: 480px;
+      height: 480px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255,255,255,0.03) 0%, transparent 70%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    main {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0;
+      text-align: center;
+      padding: 2rem;
+      max-width: 480px;
+      width: 100%;
+    }
+
+    .cat {
+      font-size: clamp(88px, 18vw, 128px);
+      line-height: 1;
+      user-select: none;
+      animation: float 6s ease-in-out infinite;
+      margin-bottom: 2.5rem;
+      filter: drop-shadow(0 0 40px rgba(255,255,255,0.04));
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50%       { transform: translateY(-10px); }
+    }
+
+    .status {
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--text-lo);
+      margin-bottom: 1.25rem;
+    }
+
+    h1 {
+      font-size: clamp(1.75rem, 5vw, 2.25rem);
+      font-weight: 500;
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+      color: var(--text-hi);
+      text-wrap: balance;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      font-size: 0.9375rem;
+      line-height: 1.65;
+      color: var(--text-mid);
+      text-wrap: balance;
+      max-width: 320px;
+    }
+
+    footer {
+      position: fixed;
+      bottom: 2rem;
+      left: 0;
+      right: 0;
+      text-align: center;
+      font-size: 0.75rem;
+      color: var(--text-lo);
+      letter-spacing: 0.04em;
+      z-index: 1;
+    }
+  </style>
+</head>
+<body>
+  <div class="glow" aria-hidden="true"></div>
+
+  <main>
+    <div class="cat" role="img" aria-label="Black cat">🐈‍⬛</div>
+    <p class="status">Under Maintenance</p>
+    <h1>Something new<br>is being built.</h1>
+    <p>Back shortly. In the meantime, the cat is keeping watch.</p>
+  </main>
+
+  <footer>© Alejandro Arab</footer>
+</body>
+</html>
