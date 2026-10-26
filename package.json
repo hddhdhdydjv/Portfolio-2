@@ -6,6 +6,7 @@
     "dev": "nuxt dev",
     "dev:mock": "NUXT_PUBLIC_CONTENT_SOURCE=mock nuxt dev",
     "build": "nuxt build",
+    "build:mock": "node scripts/build-mock.mjs && NUXT_PUBLIC_CONTENT_SOURCE=mock nuxt build",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",

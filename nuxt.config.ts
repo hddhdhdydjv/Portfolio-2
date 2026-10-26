@@ -41,6 +41,9 @@ export default defineNuxtConfig({
   },
 
   nitro: {
+    serverAssets: contentSource === 'mock'
+      ? [{ baseName: 'mock', dir: fileURLToPath(new URL('./content/.mock', import.meta.url)) }]
+      : [],
     publicAssets: contentSource === 'mock'
       ? [{ dir: fileURLToPath(new URL('./content/images', import.meta.url)), baseURL: '/_content/images', maxAge: 0 }]
       : [],

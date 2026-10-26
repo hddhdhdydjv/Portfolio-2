@@ -1,5 +1,5 @@
 {
-  "repositoryName": "alejandro-portfolio",
+  "repositoryName": "hddhddhd",
   "adapter": "@slicemachine/adapter-nuxt",
   "libraries": ["./app/slices"],
   "localSliceSimulatorURL": "http://localhost:3000/slice-simulator"
