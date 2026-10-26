@@ -4,6 +4,8 @@ title: Ven con Alex
 sidebar_heading: Una de esas cosas digitales
 order: 0
 featured: true
+cover: ven-con-alex/cover.webp | Landing de Ven con Alex en desktop con el formulario de preaprobación en mobile
+thumbnail: ven-con-alex/thumbnail.webp | Landing de Ven con Alex
 role: Product Designer (UX/UI) y responsable del design system
 problem: Ven con Alex gana dinero solo si el cliente califica, firma y sigue pagando durante dos años. Cuando un cliente tiene un problema personal o de dinero, lo primero que deja de pagar es el auto. El riesgo real no era la adquisición, era la retención.
 results:
@@ -82,6 +84,10 @@ Cuatro insights definieron dónde trabajar:
 
 La IA entró por WhatsApp. La preaprobación hacía una primera calificación con preguntas y respuestas; después, un agente de IA integrado en WhatsApp seguía la conversación: respondía dudas, guiaba al usuario y entendía su caso particular, mientras otra IA precalificaba los leads por detrás. El scoring a cargo de agentes autónomos quedó para una etapa siguiente.
 
+::images
+- ven-con-alex/01.webp | Página de pre-lanzamiento: próximamente en San Antonio
+
+
 ## Develop: diseñar para este contexto
 
 A mitad de camino, los fundadores reabrieron el alcance: deudas e historial de pagos, historial de dueños de cada auto, avisos de cobranza, verificaciones a domicilio. Cada pedido nuevo pasó por una sola pregunta: ¿ayuda a esta persona a quedarse con el auto y seguir pagando? Estas son las decisiones en las que el contexto del usuario cambió el diseño.
@@ -102,6 +108,12 @@ A mitad de camino, los fundadores reabrieron el alcance: deudas e historial de p
 | Quiere una persona, no una institución | Los textos hablan como Alex ("Tell Alex a little about yourself"), un video de Alex en la landing, nombres de pila en todo |
 | Muchos no califican solos por falta de documentación, pero un familiar o conocido sí | Se acepta un co-firmante con ID de Texas, y el agente de WhatsApp explora cada caso: quién presenta la documentación y qué plan de pagos le sirve |
 
+::images
+- ven-con-alex/02.webp | Preaprobación en dos pasos y pantalla de rechazo con WhatsApp
+- ven-con-alex/03.webp | Confirmación de cita, seguimiento por WhatsApp y carga de documentos con foto
+- ven-con-alex/04.webp | Inventario con el pago inicial "Drive Out" primero, y el detalle de un auto
+
+
 ## Deliver: prototipo, sistema y handoff
 
 Armé un design system y un único archivo de handoff organizado como lo iba a construir ingeniería: por módulo y después por breakpoint (mobile, tablet, desktop), con cada flujo de izquierda a derecha, incluidos estados vacíos, de error y casos borde.
@@ -116,6 +128,12 @@ Armé un design system y un único archivo de handoff organizado como lo iba a c
 1. Cinco sesiones remotas de think-aloud en español con personas que encajen en el perfil, sobre los flujos de preaprobación y primer pago.
 2. Un test de concepto rápido de la pantalla de rechazo: ¿se siente como una puerta cerrada o como un próximo paso?
 3. Analítica del funnel desde el día uno, para que las primeras semanas en producción funcionen como la prueba.
+
+::images
+- ven-con-alex/05.webp | Dashboard del cliente en desktop
+- ven-con-alex/06.webp | Hacer un pago, documentos de Tu auto y Servicios
+- ven-con-alex/07.webp | Reporte de incidente, registro y login con el teléfono
+
 
 ## Resultado y cómo medirlo
 

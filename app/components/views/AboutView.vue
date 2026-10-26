@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { components } from '~/slices'
+
 const source = useContentSource()
 const { data: about } = await useContent('about', (lang) => source.single('about', lang))
 const a = computed(() => about.value?.data ?? {})
@@ -19,6 +21,7 @@ useSeoMeta({
     <PrismicLink v-if="a.resume_link?.url" v-reveal="'up'" :field="a.resume_link" class="about__resume">
       {{ a.resume_label }}
     </PrismicLink>
+    <SliceZone v-if="a.slices?.length" :slices="a.slices" :components="components" />
   </div>
 </template>
 

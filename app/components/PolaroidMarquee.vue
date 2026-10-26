@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { ImageField } from '@prismicio/client'
-import { animate, createSpring } from 'animejs'
+import { animate, spring as createSpring } from 'animejs'
 
 const props = defineProps<{ items: Array<{ photo: ImageField, caption?: string | null }> }>()
 const track = ref<HTMLElement>()

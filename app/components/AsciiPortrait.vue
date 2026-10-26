@@ -102,6 +102,7 @@ onMounted(async () => {
   }
 
   draw()
+  await introReady
   const intro = prefersReducedMotion() ? null : animate(state, { progress: [0, 1], duration: 1800, delay: 300, ease: 'out(2)', onUpdate: draw })
   // Static flicker, like the original's 140ms interval.
   const flicker = prefersReducedMotion() ? 0 : window.setInterval(() => { if (state.progress >= 1) draw() }, 140)

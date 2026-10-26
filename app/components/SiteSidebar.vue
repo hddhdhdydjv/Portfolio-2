@@ -18,7 +18,16 @@ const activeKey = computed(() => {
   return path.startsWith('/projects') ? 'projects' : path.startsWith('/about') ? 'about' : 'home'
 })
 const email = computed(() => (s.value.email ? `mailto:${s.value.email}` : undefined))
-const linkedin = computed(() => s.value.linkedin?.url as string | undefined)
+// Social links from Settings; falls back to the email/LinkedIn fields.
+const socials = computed(() => {
+  const list = (s.value.social_links ?? []) as Array<{ platform?: string, label?: string, link?: { url?: string } }>
+  const filled = list.filter((x) => x.link?.url).map((x) => ({ platform: x.platform ?? 'Other', label: x.label || x.platform || '', url: x.link!.url! }))
+  if (filled.length) return filled
+  return [
+    email.value && { platform: 'Email', label: 'Email', url: email.value },
+    s.value.linkedin?.url && { platform: 'LinkedIn', label: 'LinkedIn', url: s.value.linkedin.url as string },
+  ].filter(Boolean) as Array<{ platform: string, label: string, url: string }>
+})
 
 // --- Sliding pill behind the active tab ------------------------------------
 const nav = ref<HTMLElement>()
@@ -84,7 +93,7 @@ onMounted(() => {
   if (nav.value) navObserver.observe(nav.value)
   document.fonts.ready.then(() => movePill(true))
   if (prefersReducedMotion() || !headingEl.value) return
-  document.fonts.ready.then(async () => {
+  Promise.all([document.fonts.ready, introReady]).then(async () => {
     const el = headingEl.value!
     const intro = await splitLines(el)
     el.style.opacity = '1'
@@ -112,17 +121,21 @@ watch(tabs, () => nextTick(() => movePill(true)))
           <span data-scramble>{{ s.nav_email || 'Email me' }}</span>
         </a>
       </nav>
+      <MobileMenu
+        :socials="socials" :lang-href="alternatePath" :lang-label="isEs ? 'English' : 'Español'"
+        :links="[...tabs, ...(email ? [{ key: 'email', label: s.nav_email || 'Email me', href: email, external: true }] : [])]"
+      />
       <h1 ref="headingEl" class="side__heading t-display" :class="{ 'is-intro': true }">{{ heading }}</h1>
     </div>
 
     <div class="side__bottom">
       <AsciiPortrait v-if="s.avatar?.url" :src="s.avatar.url" :alt="s.avatar.alt" class="side__portrait" />
       <div class="side__links">
-        <a v-if="email" :href="email" class="side__icon" aria-label="Email">
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><rect x="1.5" y="3" width="13" height="10" rx="1.5" stroke="currentColor" /><path d="m2 4 6 5 6-5" stroke="currentColor" /></svg>
-        </a>
-        <a v-if="linkedin" :href="linkedin" target="_blank" rel="noopener" class="side__icon" aria-label="LinkedIn">
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><rect x="1.5" y="1.5" width="13" height="13" rx="1.5" stroke="currentColor" /><path d="M5 7v4.5M5 4.6v.1M7.6 11.5V7m0 2c0-1.2.8-2 1.8-2s1.6.7 1.6 1.9v2.6" stroke="currentColor" stroke-linecap="round" /></svg>
+        <a
+          v-for="link in socials" :key="link.url" :href="link.url" class="side__icon" :aria-label="link.label"
+          :target="link.url.startsWith('mailto:') ? undefined : '_blank'" rel="noopener"
+        >
+          <SocialIcon :platform="link.platform" />
         </a>
         <NuxtLink
           :to="alternatePath" class="side__icon side__lang" :hreflang="isEs ? 'en' : 'es'"
@@ -189,6 +202,7 @@ html.js .side__heading.is-intro { opacity: 0; }
 .side__meta { color: var(--text-2); }
 
 @media (max-width: 809.98px) {
+  .side__nav { display: none; }
   .side {
     position: relative; inset: auto; width: auto;
     padding: 24px var(--pad) 0;

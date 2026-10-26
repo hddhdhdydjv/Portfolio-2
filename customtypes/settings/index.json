@@ -65,6 +65,51 @@
         }
       }
     },
+    "Social links": {
+      "social_links": {
+        "type": "Group",
+        "config": {
+          "label": "Social links (sidebar icons and footer)",
+          "repeat": true,
+          "fields": {
+            "platform": {
+              "type": "Select",
+              "config": {
+                "label": "Platform",
+                "options": [
+                  "Email",
+                  "LinkedIn",
+                  "Instagram",
+                  "Behance",
+                  "Dribbble",
+                  "GitHub",
+                  "X",
+                  "Read.cv",
+                  "Website",
+                  "Other"
+                ],
+                "default_value": "Other"
+              }
+            },
+            "label": {
+              "type": "Text",
+              "config": {
+                "label": "Label",
+                "placeholder": "LinkedIn"
+              }
+            },
+            "link": {
+              "type": "Link",
+              "config": {
+                "label": "Link",
+                "placeholder": "",
+                "allowTargetBlank": true
+              }
+            }
+          }
+        }
+      }
+    },
     "Navigation": {
       "nav_home": {
         "type": "Text",

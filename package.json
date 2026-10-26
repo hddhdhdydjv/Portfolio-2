@@ -12,7 +12,9 @@
     "slicemachine": "start-slicemachine",
     "seed:mock": "node scripts/build-mock.mjs",
     "migrate": "node scripts/migrate.mjs",
-    "push-models": "node scripts/push-models.mjs"
+    "push-models": "node scripts/push-models.mjs",
+    "types": "node scripts/generate-types.mjs",
+    "mockups": "node scripts/mockups.mjs"
   },
   "dependencies": {
     "@nuxtjs/prismic": "^5.3.1",
@@ -25,6 +27,8 @@
     "@slicemachine/adapter-nuxt": "^0.3.100",
     "image-size": "^2.0.4",
     "marked": "^18.1.1",
+    "prismic-ts-codegen": "^0.1.31",
+    "sharp": "^0.35.5",
     "slice-machine-ui": "^2.21.6",
     "typescript": "~5.9.0",
     "vue-tsc": "^3.3.13"

@@ -76,7 +76,7 @@ const reveal: Directive<HTMLElement, RevealValue> = {
     el.setAttribute('data-reveal', '')
     if (prefersReducedMotion()) { el.setAttribute('data-revealed', ''); return }
     const { type, delay } = normalize(binding.value)
-    const start = () => (document.fonts?.ready ?? Promise.resolve()).then(() => run(el, type, delay))
+    const start = () => Promise.all([document.fonts?.ready, introReady]).then(() => run(el, type, delay))
     pending.set(el, start)
     getObserver().observe(el)
   },

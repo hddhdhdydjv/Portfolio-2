@@ -15,31 +15,113 @@
     "footer_cta": "Email me",
     "avatar": "site/ascii-cat-source.png | Pixel portrait of a tabby cat",
     "footer_cat": "site/footer-cat.webp | Pixel art black cat",
-    "language_switch": "ES"
+    "language_switch": "ES",
+    "social_links": [
+      {
+        "platform": "Email",
+        "label": "Email",
+        "url": "mailto:arab.alejandro.v@gmail.com"
+      },
+      {
+        "platform": "LinkedIn",
+        "label": "LinkedIn",
+        "url": "https://www.linkedin.com/in/arabalejandro/"
+      }
+    ]
   },
   "home": {
     "heading": "I’m Alejandro Arab, and I design digital things",
     "featured_heading": "Featured work",
     "see_all_label": "See all projects",
     "skills_heading": "Skills",
-    "skills": ["UX Design", "UI Design", "Web Design", "Interaction Design", "Responsive Design", "Prototyping", "Design Systems", "UX Research", "Variables"],
+    "skills": [
+      "UX Design",
+      "UI Design",
+      "Web Design",
+      "Interaction Design",
+      "Responsive Design",
+      "Prototyping",
+      "Design Systems",
+      "UX Research",
+      "Variables"
+    ],
     "stack_heading": "Tech Stack",
     "stack": [
-      { "name": "Figma", "icon": "stack/figma.webp", "url": "https://figma.com" },
-      { "name": "Slack", "icon": "stack/slack.webp", "url": "https://slack.com" },
-      { "name": "ChatGPT", "icon": "stack/chatgpt.jpeg", "url": "https://chatgpt.com" },
-      { "name": "V0", "icon": "stack/v0.webp", "url": "https://v0.app" },
-      { "name": "Claude", "icon": "stack/claude.webp", "url": "https://claude.ai" },
-      { "name": "Supernova", "icon": "stack/supernova.webp", "url": "https://supernova.io" },
-      { "name": "Framer", "icon": "stack/framer.webp", "url": "https://framer.com" },
-      { "name": "Cursor", "icon": "stack/cursor.webp", "url": "https://cursor.com" },
-      { "name": "Linear", "icon": "stack/linear.png", "url": "https://linear.app" },
-      { "name": "Granola", "icon": "stack/granola.webp", "url": "https://granola.ai" },
-      { "name": "Vercel", "icon": "stack/vercel.webp", "url": "https://vercel.com" },
-      { "name": "Notion", "icon": "stack/notion.webp", "url": "https://notion.so" },
-      { "name": "Storybook", "icon": "stack/storybook.webp", "url": "https://storybook.js.org" },
-      { "name": "Lovable", "icon": "stack/lovable.webp", "url": "https://lovable.dev" },
-      { "name": "GitHub", "icon": "stack/github.webp", "url": "https://github.com" }
+      {
+        "name": "Figma",
+        "icon": "stack/figma.webp",
+        "url": "https://figma.com"
+      },
+      {
+        "name": "Slack",
+        "icon": "stack/slack.webp",
+        "url": "https://slack.com"
+      },
+      {
+        "name": "ChatGPT",
+        "icon": "stack/chatgpt.jpeg",
+        "url": "https://chatgpt.com"
+      },
+      {
+        "name": "V0",
+        "icon": "stack/v0.webp",
+        "url": "https://v0.app"
+      },
+      {
+        "name": "Claude",
+        "icon": "stack/claude.webp",
+        "url": "https://claude.ai"
+      },
+      {
+        "name": "Supernova",
+        "icon": "stack/supernova.webp",
+        "url": "https://supernova.io"
+      },
+      {
+        "name": "Framer",
+        "icon": "stack/framer.webp",
+        "url": "https://framer.com"
+      },
+      {
+        "name": "Cursor",
+        "icon": "stack/cursor.webp",
+        "url": "https://cursor.com"
+      },
+      {
+        "name": "Linear",
+        "icon": "stack/linear.png",
+        "url": "https://linear.app"
+      },
+      {
+        "name": "Granola",
+        "icon": "stack/granola.webp",
+        "url": "https://granola.ai"
+      },
+      {
+        "name": "Vercel",
+        "icon": "stack/vercel.webp",
+        "url": "https://vercel.com"
+      },
+      {
+        "name": "Notion",
+        "icon": "stack/notion.webp",
+        "url": "https://notion.so"
+      },
+      {
+        "name": "Storybook",
+        "icon": "stack/storybook.webp",
+        "url": "https://storybook.js.org"
+      },
+      {
+        "name": "Lovable",
+        "icon": "stack/lovable.webp",
+        "url": "https://lovable.dev"
+      },
+      {
+        "name": "GitHub",
+        "icon": "stack/github.webp",
+        "url": "https://github.com"
+      }
     ],
     "experience_heading": "Experience",
     "experience": [
@@ -80,14 +162,38 @@
       "Collaboration is where most of the real work happens for me. **I spend a lot of time with developers, PMs, and clients, not just handing off files but figuring things out together.** Whether I'm building a design system, mapping out a complex flow, or going back and forth on a single interaction, I try to stay close to the craft at every scale. The details are part of the job, not a bonus round at the end."
     ],
     "polaroids": [
-      { "image": "about/amsterdam.webp | Alejandro and Pía on a street in Amsterdam", "caption": "Amsterdam, Netherlands '24" },
-      { "image": "about/roma.webp | Roma, a tabby cat, lying on a cat tree", "caption": "Roma '26" },
-      { "image": "about/venus.webp | Venus, a black cat, curled up on a red blanket", "caption": "Venus '26" },
-      { "image": "about/maui.webp | Pía and Alejandro in sun hats by the sea in Maui", "caption": "Maui, Hawaii '25" },
-      { "image": "about/food.webp | A bowl of seafood stew", "caption": "" },
-      { "image": "about/berlin.webp | Pía and Alejandro standing on a street in Berlin", "caption": "Berlin, Germany '24" },
-      { "image": "about/buenos-aires.webp | Pía and Alejandro in a garden in Buenos Aires", "caption": "Buenos Aires, Argentina '24" },
-      { "image": "about/haleakala.webp | Alejandro above the clouds at Haleakalā at sunset", "caption": "Haleakalā Volcano, Maui, Hawaii '25" }
+      {
+        "image": "about/amsterdam.webp | Alejandro and Pía on a street in Amsterdam",
+        "caption": "Amsterdam, Netherlands '24"
+      },
+      {
+        "image": "about/roma.webp | Roma, a tabby cat, lying on a cat tree",
+        "caption": "Roma '26"
+      },
+      {
+        "image": "about/venus.webp | Venus, a black cat, curled up on a red blanket",
+        "caption": "Venus '26"
+      },
+      {
+        "image": "about/maui.webp | Pía and Alejandro in sun hats by the sea in Maui",
+        "caption": "Maui, Hawaii '25"
+      },
+      {
+        "image": "about/food.webp | A bowl of seafood stew",
+        "caption": ""
+      },
+      {
+        "image": "about/berlin.webp | Pía and Alejandro standing on a street in Berlin",
+        "caption": "Berlin, Germany '24"
+      },
+      {
+        "image": "about/buenos-aires.webp | Pía and Alejandro in a garden in Buenos Aires",
+        "caption": "Buenos Aires, Argentina '24"
+      },
+      {
+        "image": "about/haleakala.webp | Alejandro above the clouds at Haleakalā at sunset",
+        "caption": "Haleakalā Volcano, Maui, Hawaii '25"
+      }
     ],
     "outro": [
       "Outside the screen, I cook, play bass and synthesizers, and travel with my partner Pía whenever we get the chance. We're both designers, so wherever we end up we're usually working, sketching, or collecting references without really meaning to. I'm also a big video game fan and my Nintendo Switch comes on every trip. At home we share the space with our two cats, Roma and Venus, who have pretty firm opinions about our work hours and who gets to use the office chairs. I grew up with a background in gastronomy before landing in design, and I think that attention to ingredients, timing, process, mise en place, and how something finally comes together is simply part of how I design today."
@@ -95,6 +201,186 @@
     "resume_label": "Download Resume!",
     "resume_url": "https://drive.google.com/drive/folders/1blY0rOa1xrZxx0CLlY5aw3JAx_gqAHE8?usp=drive_link",
     "meta_title": "About — Alejandro Arab",
-    "meta_description": "Product Designer working close to the team and close to the problem, from early decisions to final handoff."
+    "meta_description": "Product Designer working close to the team and close to the problem, from early decisions to final handoff.",
+    "scroll_scramble": {
+      "center_word": "Alejandro Arab",
+      "lines": [
+        {
+          "text": "Discovery",
+          "from": "Far right",
+          "to": "Quarter",
+          "big": false,
+          "new_block": true
+        },
+        {
+          "text": "Handoff",
+          "from": "Far right",
+          "to": "Quarter",
+          "big": false,
+          "new_block": false
+        },
+        {
+          "text": "Design systems",
+          "from": "Far right",
+          "to": "Quarter",
+          "big": false,
+          "new_block": false
+        },
+        {
+          "text": "Figma",
+          "from": "Left",
+          "to": "Right",
+          "big": false,
+          "new_block": true
+        },
+        {
+          "text": "Prototypes",
+          "from": "Left",
+          "to": "Right",
+          "big": false,
+          "new_block": false
+        },
+        {
+          "text": "Microinteractions",
+          "from": "Left",
+          "to": "Right",
+          "big": false,
+          "new_block": false
+        },
+        {
+          "text": "Variables",
+          "from": "Left",
+          "to": "Right",
+          "big": false,
+          "new_block": false
+        },
+        {
+          "text": "Usability tests",
+          "from": "Left",
+          "to": "Right",
+          "big": false,
+          "new_block": false
+        },
+        {
+          "text": "A",
+          "from": "Left",
+          "to": "Quarter",
+          "big": true,
+          "new_block": true
+        },
+        {
+          "text": "Healthtech",
+          "from": "Quarter",
+          "to": "Left",
+          "big": false,
+          "new_block": true
+        },
+        {
+          "text": "Fintech",
+          "from": "Quarter",
+          "to": "Left",
+          "big": false,
+          "new_block": false
+        },
+        {
+          "text": "AI",
+          "from": "Quarter",
+          "to": "Left",
+          "big": false,
+          "new_block": false
+        },
+        {
+          "text": "Web3",
+          "from": "Quarter",
+          "to": "Left",
+          "big": false,
+          "new_block": false
+        },
+        {
+          "text": "L",
+          "from": "Right",
+          "to": "Quarter",
+          "big": true,
+          "new_block": true
+        },
+        {
+          "text": "Bass",
+          "from": "Right",
+          "to": "Quarter",
+          "big": false,
+          "new_block": true
+        },
+        {
+          "text": "Synthesizers",
+          "from": "Right",
+          "to": "Quarter",
+          "big": false,
+          "new_block": false
+        },
+        {
+          "text": "Mise en place",
+          "from": "Right",
+          "to": "Quarter",
+          "big": false,
+          "new_block": false
+        },
+        {
+          "text": "Nintendo Switch",
+          "from": "Right",
+          "to": "Quarter",
+          "big": false,
+          "new_block": false
+        },
+        {
+          "text": "Roma & Venus",
+          "from": "Quarter",
+          "to": "Far right",
+          "big": false,
+          "new_block": true
+        },
+        {
+          "text": "Amsterdam",
+          "from": "Quarter",
+          "to": "Far right",
+          "big": false,
+          "new_block": false
+        },
+        {
+          "text": "Berlin",
+          "from": "Quarter",
+          "to": "Far right",
+          "big": false,
+          "new_block": false
+        },
+        {
+          "text": "Maui",
+          "from": "Quarter",
+          "to": "Far right",
+          "big": false,
+          "new_block": false
+        },
+        {
+          "text": "Buenos Aires",
+          "from": "Quarter",
+          "to": "Far right",
+          "big": false,
+          "new_block": false
+        },
+        {
+          "text": "E",
+          "from": "Left",
+          "to": "Right",
+          "big": true,
+          "new_block": true
+        },
+        {
+          "text": "Let's build something",
+          "from": "Left",
+          "to": "Quarter",
+          "big": false,
+          "new_block": true
+        }
+      ]
+    }
   }
 }

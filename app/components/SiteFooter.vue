@@ -6,6 +6,9 @@ const props = defineProps<{ settings: PrismicDocument | null | undefined }>()
 const s = computed(() => props.settings?.data ?? {})
 const { to } = useLang()
 const email = computed(() => (s.value.email ? `mailto:${s.value.email}` : undefined))
+const socials = computed(() => ((s.value.social_links ?? []) as Array<{ platform?: string, label?: string, link?: { url?: string } }>)
+  .filter((x) => x.link?.url && x.platform !== 'Email')
+  .map((x) => ({ label: x.label || x.platform || '', url: x.link!.url! })))
 
 const root = ref<HTMLElement>()
 const cat = ref<HTMLElement>()
@@ -40,6 +43,9 @@ onBeforeUnmount(() => cleanup())
         <NuxtLink :to="to('/projects')">{{ s.nav_projects || 'Projects' }}</NuxtLink>
         <NuxtLink :to="to('/about')">{{ s.nav_about || 'About' }}</NuxtLink>
       </nav>
+      <nav v-if="socials.length" class="site-footer__links site-footer__social" aria-label="Social">
+        <a v-for="link in socials" :key="link.url" :href="link.url" target="_blank" rel="noopener">{{ link.label }} ↗</a>
+      </nav>
     </div>
     <div v-if="s.footer_cat?.url" ref="cat" class="site-footer__cat">
       <PrismicImage :field="s.footer_cat" :imgix-params="{ w: 720 }" alt="" />
@@ -71,6 +77,7 @@ onBeforeUnmount(() => cleanup())
 }
 .site-footer__cta:hover { transform: translateY(-2px) scale(1.04); background: #000; }
 .site-footer__links { display: grid; gap: 4px; justify-items: start; margin-top: 8px; }
+.site-footer__social { margin-top: 0; }
 .site-footer__links a {
   padding: 2px 4px; border-radius: 8px; color: var(--ink);
   transition: background-color 0.3s var(--ease-out), padding 0.4s var(--ease-out);

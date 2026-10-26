@@ -1,0 +1,34 @@
+{
+  "fileKey": "zrAbRcgiiGQfHQRfsuhZMw",
+  "note": "Screens go in content/figma/screens/<name>.png (export at 2x). Then run `npm run mockups`.",
+  "screens": {
+    "landing-en": { "node": "6461:26784", "label": "Landing" },
+    "pre-launch": { "node": "4157:24113", "label": "Pre-launch" },
+    "preapproval-1": { "node": "6139:38639", "label": "Pre-approval · basics" },
+    "preapproval-2": { "node": "6139:38831", "label": "Pre-approval · down payment" },
+    "preapproval-error": { "node": "6139:36114", "label": "Rejection + WhatsApp" },
+    "appointment": { "node": "6139:38898", "label": "Appointment confirmed" },
+    "whatsapp": { "node": "6139:36241", "label": "WhatsApp" },
+    "documents": { "node": "6139:39252", "label": "Document upload" },
+    "inventory": { "node": "6139:35398", "label": "Inventory" },
+    "car-detail": { "node": "6139:38405", "label": "Car detail" },
+    "dashboard": { "node": "6139:148994", "label": "Customer dashboard" },
+    "first-payment": { "node": "6139:32950", "label": "Make a payment" },
+    "your-car": { "node": "6139:31693", "label": "Your car" },
+    "services": { "node": "6139:33315", "label": "Services" },
+    "incident": { "node": "6139:34556", "label": "Incident" },
+    "signup": { "node": "6139:29503", "label": "Sign up" },
+    "login": { "node": "6139:30130", "label": "Log in" }
+  },
+  "outputs": [
+    { "file": "ven-con-alex/thumbnail.webp", "size": [1784, 1004], "layout": "desktop", "screens": ["landing-en"] },
+    { "file": "ven-con-alex/cover.webp", "size": [1784, 1116], "layout": "desktop-phone", "screens": ["landing-en", "preapproval-1"] },
+    { "file": "ven-con-alex/01.webp", "size": [1784, 1116], "layout": "desktop", "screens": ["pre-launch"] },
+    { "file": "ven-con-alex/02.webp", "size": [1784, 1116], "layout": "phones", "screens": ["preapproval-1", "preapproval-2", "preapproval-error"] },
+    { "file": "ven-con-alex/03.webp", "size": [1784, 1116], "layout": "phones", "screens": ["appointment", "whatsapp", "documents"] },
+    { "file": "ven-con-alex/04.webp", "size": [1784, 1116], "layout": "desktop-phone", "screens": ["inventory", "car-detail"] },
+    { "file": "ven-con-alex/05.webp", "size": [1784, 1116], "layout": "desktop", "screens": ["dashboard"] },
+    { "file": "ven-con-alex/06.webp", "size": [1784, 1116], "layout": "phones", "screens": ["first-payment", "your-car", "services"] },
+    { "file": "ven-con-alex/07.webp", "size": [1784, 1116], "layout": "phones", "screens": ["incident", "signup", "login"] }
+  ]
+}

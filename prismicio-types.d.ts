@@ -73,6 +73,8 @@ export interface AboutDocumentDataPolaroidsItem {
 	caption: prismic.KeyTextField;
 }
 
+type AboutDocumentDataSlicesSlice = ScrollScrambleSlice | TextSectionSlice | ImageStackSlice | QuoteSlice
+
 /**
  * Content for About documents
  */
@@ -141,7 +143,18 @@ interface AboutDocumentData {
 	 * - **Tab**: Main
 	 * - **Documentation**: https://prismic.io/docs/fields/link
 	 */
-	resume_link: prismic.LinkField<string, string, unknown, prismic.FieldState, never>;/**
+	resume_link: prismic.LinkField<string, string, unknown, prismic.FieldState, never>;
+	
+	/**
+	 * Slice Zone field in *About*
+	 *
+	 * - **Field Type**: Slice Zone
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: about.slices[]
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/slices
+	 */
+	slices: prismic.SliceZone<AboutDocumentDataSlicesSlice>;/**
 	 * Meta title field in *About*
 	 *
 	 * - **Field Type**: Text
@@ -201,7 +214,7 @@ export interface CaseStudyDocumentDataResultsItem {
 	item: prismic.KeyTextField;
 }
 
-type CaseStudyDocumentDataSlicesSlice = TextSectionSlice | ImageStackSlice | ImageTickerSlice | TableBlockSlice | QuoteSlice
+type CaseStudyDocumentDataSlicesSlice = TextSectionSlice | ImageStackSlice | ImageTickerSlice | TableBlockSlice | ScrollScrambleSlice | QuoteSlice
 
 /**
  * Content for Case study documents
@@ -682,6 +695,42 @@ interface ProjectsPageDocumentData {
 export type ProjectsPageDocument<Lang extends string = string> = prismic.PrismicDocumentWithoutUID<Simplify<ProjectsPageDocumentData>, "projects_page", Lang>;
 
 /**
+ * Item in *Settings → Social links (sidebar icons and footer)*
+ */
+export interface SettingsDocumentDataSocialLinksItem {
+	/**
+	 * Platform field in *Settings → Social links (sidebar icons and footer)*
+	 *
+	 * - **Field Type**: Select
+	 * - **Placeholder**: *None*
+	 * - **Default Value**: Other
+	 * - **API ID Path**: settings.social_links[].platform
+	 * - **Documentation**: https://prismic.io/docs/fields/select
+	 */
+	platform: prismic.SelectField<"Email" | "LinkedIn" | "Instagram" | "Behance" | "Dribbble" | "GitHub" | "X" | "Read.cv" | "Website" | "Other", "filled">;
+	
+	/**
+	 * Label field in *Settings → Social links (sidebar icons and footer)*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: LinkedIn
+	 * - **API ID Path**: settings.social_links[].label
+	 * - **Documentation**: https://prismic.io/docs/fields/text
+	 */
+	label: prismic.KeyTextField;
+	
+	/**
+	 * Link field in *Settings → Social links (sidebar icons and footer)*
+	 *
+	 * - **Field Type**: Link
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: settings.social_links[].link
+	 * - **Documentation**: https://prismic.io/docs/fields/link
+	 */
+	link: prismic.LinkField<string, string, unknown, prismic.FieldState, never>;
+}
+
+/**
  * Content for Settings documents
  */
 interface SettingsDocumentData {
@@ -772,6 +821,15 @@ interface SettingsDocumentData {
 	 * - **Documentation**: https://prismic.io/docs/fields/link
 	 */
 	linkedin: prismic.LinkField<string, string, unknown, prismic.FieldState, never>;/**
+	 * Social links (sidebar icons and footer) field in *Settings*
+	 *
+	 * - **Field Type**: Group
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: settings.social_links[]
+	 * - **Tab**: Social links
+	 * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
+	 */
+	social_links: prismic.GroupField<Simplify<SettingsDocumentDataSocialLinksItem>>;/**
 	 * Home label field in *Settings*
 	 *
 	 * - **Field Type**: Text
@@ -1041,6 +1099,113 @@ type QuoteSliceVariation = QuoteSliceDefault
 export type QuoteSlice = prismic.SharedSlice<"quote", QuoteSliceVariation>;
 
 /**
+ * Item in *ScrollScramble → Default → Primary → Lines*
+ */
+export interface ScrollScrambleSliceDefaultPrimaryLinesItem {
+	/**
+	 * Text field in *ScrollScramble → Default → Primary → Lines*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: scroll_scramble.default.primary.lines[].text
+	 * - **Documentation**: https://prismic.io/docs/fields/text
+	 */
+	text: prismic.KeyTextField;
+	
+	/**
+	 * Starts at field in *ScrollScramble → Default → Primary → Lines*
+	 *
+	 * - **Field Type**: Select
+	 * - **Placeholder**: *None*
+	 * - **Default Value**: Left
+	 * - **API ID Path**: scroll_scramble.default.primary.lines[].from
+	 * - **Documentation**: https://prismic.io/docs/fields/select
+	 */
+	from: prismic.SelectField<"Left" | "Quarter" | "Right" | "Far right", "filled">;
+	
+	/**
+	 * Moves to field in *ScrollScramble → Default → Primary → Lines*
+	 *
+	 * - **Field Type**: Select
+	 * - **Placeholder**: *None*
+	 * - **Default Value**: Right
+	 * - **API ID Path**: scroll_scramble.default.primary.lines[].to
+	 * - **Documentation**: https://prismic.io/docs/fields/select
+	 */
+	to: prismic.SelectField<"Left" | "Quarter" | "Right" | "Far right", "filled">;
+	
+	/**
+	 * Big pixel letter field in *ScrollScramble → Default → Primary → Lines*
+	 *
+	 * - **Field Type**: Boolean
+	 * - **Placeholder**: *None*
+	 * - **Default Value**: false
+	 * - **API ID Path**: scroll_scramble.default.primary.lines[].big
+	 * - **Documentation**: https://prismic.io/docs/fields/boolean
+	 */
+	big: prismic.BooleanField;
+	
+	/**
+	 * Start a new block (adds space before) field in *ScrollScramble → Default → Primary → Lines*
+	 *
+	 * - **Field Type**: Boolean
+	 * - **Placeholder**: *None*
+	 * - **Default Value**: false
+	 * - **API ID Path**: scroll_scramble.default.primary.lines[].new_block
+	 * - **Documentation**: https://prismic.io/docs/fields/boolean
+	 */
+	new_block: prismic.BooleanField;
+}
+
+/**
+ * Primary content in *ScrollScramble → Default → Primary*
+ */
+export interface ScrollScrambleSliceDefaultPrimary {
+	/**
+	 * Fixed word in the middle field in *ScrollScramble → Default → Primary*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: Alejandro Arab
+	 * - **API ID Path**: scroll_scramble.default.primary.center_word
+	 * - **Documentation**: https://prismic.io/docs/fields/text
+	 */
+	center_word: prismic.KeyTextField;
+	
+	/**
+	 * Lines field in *ScrollScramble → Default → Primary*
+	 *
+	 * - **Field Type**: Group
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: scroll_scramble.default.primary.lines[]
+	 * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
+	 */
+	lines: prismic.GroupField<Simplify<ScrollScrambleSliceDefaultPrimaryLinesItem>>;
+}
+
+/**
+ * Default variation for ScrollScramble Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type ScrollScrambleSliceDefault = prismic.SharedSliceVariation<"default", Simplify<ScrollScrambleSliceDefaultPrimary>, never>;
+
+/**
+ * Slice variation for *ScrollScramble*
+ */
+type ScrollScrambleSliceVariation = ScrollScrambleSliceDefault
+
+/**
+ * ScrollScramble Shared Slice
+ *
+ * - **API ID**: `scroll_scramble`
+ * - **Description**: Words that drift sideways and scramble as you scroll, around a fixed word
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type ScrollScrambleSlice = prismic.SharedSlice<"scroll_scramble", ScrollScrambleSliceVariation>;
+
+/**
  * Primary content in *TableBlock → Default → Primary*
  */
 export interface TableBlockSliceDefaultPrimary {
@@ -1154,6 +1319,7 @@ declare module "@prismicio/client" {
 			AboutDocument,
 			AboutDocumentData,
 			AboutDocumentDataPolaroidsItem,
+			AboutDocumentDataSlicesSlice,
 			CaseStudyDocument,
 			CaseStudyDocumentData,
 			CaseStudyDocumentDataResultsItem,
@@ -1167,6 +1333,7 @@ declare module "@prismicio/client" {
 			ProjectsPageDocumentData,
 			SettingsDocument,
 			SettingsDocumentData,
+			SettingsDocumentDataSocialLinksItem,
 			AllDocumentTypes,
 			ImageStackSlice,
 			ImageStackSliceDefaultPrimaryImagesItem,
@@ -1183,6 +1350,11 @@ declare module "@prismicio/client" {
 			QuoteSliceDefaultPrimary,
 			QuoteSliceVariation,
 			QuoteSliceDefault,
+			ScrollScrambleSlice,
+			ScrollScrambleSliceDefaultPrimaryLinesItem,
+			ScrollScrambleSliceDefaultPrimary,
+			ScrollScrambleSliceVariation,
+			ScrollScrambleSliceDefault,
 			TableBlockSlice,
 			TableBlockSliceDefaultPrimary,
 			TableBlockSliceVariation,

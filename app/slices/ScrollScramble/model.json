@@ -1,0 +1,86 @@
+{
+  "id": "scroll_scramble",
+  "type": "SharedSlice",
+  "name": "ScrollScramble",
+  "description": "Words that drift sideways and scramble as you scroll, around a fixed word",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "center_word": {
+          "type": "Text",
+          "config": {
+            "label": "Fixed word in the middle",
+            "placeholder": "Alejandro Arab"
+          }
+        },
+        "lines": {
+          "type": "Group",
+          "config": {
+            "label": "Lines",
+            "repeat": true,
+            "fields": {
+              "text": {
+                "type": "Text",
+                "config": {
+                  "label": "Text",
+                  "placeholder": ""
+                }
+              },
+              "from": {
+                "type": "Select",
+                "config": {
+                  "label": "Starts at",
+                  "options": [
+                    "Left",
+                    "Quarter",
+                    "Right",
+                    "Far right"
+                  ],
+                  "default_value": "Left"
+                }
+              },
+              "to": {
+                "type": "Select",
+                "config": {
+                  "label": "Moves to",
+                  "options": [
+                    "Left",
+                    "Quarter",
+                    "Right",
+                    "Far right"
+                  ],
+                  "default_value": "Right"
+                }
+              },
+              "big": {
+                "type": "Boolean",
+                "config": {
+                  "label": "Big pixel letter",
+                  "default_value": false,
+                  "placeholder_true": "Yes",
+                  "placeholder_false": "No"
+                }
+              },
+              "new_block": {
+                "type": "Boolean",
+                "config": {
+                  "label": "Start a new block (adds space before)",
+                  "default_value": false,
+                  "placeholder_true": "Yes",
+                  "placeholder_false": "No"
+                }
+              }
+            }
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

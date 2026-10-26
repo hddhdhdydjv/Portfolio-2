@@ -7,6 +7,7 @@ export const components = defineSliceZoneComponents({
 	image_stack: defineAsyncComponent(() => import("./ImageStack/index.vue")),
 	image_ticker: defineAsyncComponent(() => import("./ImageTicker/index.vue")),
 	quote: defineAsyncComponent(() => import("./Quote/index.vue")),
+	scroll_scramble: defineAsyncComponent(() => import("./ScrollScramble/index.vue")),
 	table_block: defineAsyncComponent(() => import("./TableBlock/index.vue")),
 	text_section: defineAsyncComponent(() => import("./TextSection/index.vue")),
 });

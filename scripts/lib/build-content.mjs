@@ -200,7 +200,7 @@ function parseCase(source, asset) {
 // ---------------------------------------------------------------------------
 // Site JSON → singleton documents
 
-const web = (url) => (url ? { link_type: 'Web', url, target: '_blank' } : { link_type: 'Any' })
+const web = (url) => (url ? { link_type: 'Web', url, ...(url.startsWith('mailto:') ? {} : { target: '_blank' }) } : { link_type: 'Any' })
 const paragraphs = (list) => (list ?? []).flatMap((p) => richFromMarkdown(p))
 
 function deepDefaults(target, fallback) {
@@ -220,6 +220,7 @@ function buildSite(site, asset) {
       nav_home: s.nav_home, nav_projects: s.nav_projects, nav_about: s.nav_about, nav_email: s.nav_email,
       language_switch: s.language_switch, footer_heading: s.footer_heading, footer_cta: s.footer_cta,
       footer_cat: asset(parseImageRef(s.footer_cat)),
+      social_links: (s.social_links ?? []).map((x) => ({ platform: x.platform, label: x.label, link: web(x.url) })),
     } },
     { type: 'home', title: 'Home', data: {
       heading: h.heading, featured_heading: h.featured_heading, see_all_label: h.see_all_label,
@@ -237,6 +238,7 @@ function buildSite(site, asset) {
       heading: a.heading, intro: paragraphs(a.intro),
       polaroids: a.polaroids.map((x) => ({ photo: asset(parseImageRef(x.image)), caption: x.caption || null })),
       outro: paragraphs(a.outro), resume_label: a.resume_label, resume_link: web(a.resume_url),
+      slices: a.scroll_scramble ? [slice('scroll_scramble', { center_word: a.scroll_scramble.center_word, lines: a.scroll_scramble.lines })] : [],
       meta_title: a.meta_title, meta_description: a.meta_description, meta_image: asset(null),
     } },
   ]

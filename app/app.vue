@@ -45,6 +45,7 @@ const transition = {
 </script>
 
 <template>
+  <PixelLoader :label="settings?.data.name" />
   <NuxtLayout>
     <NuxtPage :transition="transition" />
   </NuxtLayout>

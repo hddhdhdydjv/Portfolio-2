@@ -4,6 +4,8 @@ title: Ven con Alex
 sidebar_heading: One of those digital things
 order: 0
 featured: true
+cover: ven-con-alex/cover.webp | Ven con Alex landing on desktop with the pre-approval form on mobile
+thumbnail: ven-con-alex/thumbnail.webp | Ven con Alex landing page
 role: Product Designer (UX/UI) and design system owner
 problem: Ven con Alex earns money only if a customer qualifies, signs, and keeps paying for two years. When a customer runs into personal or money trouble, the car payment is the first thing they stop paying. Retention, not acquisition, was the real risk.
 results:
@@ -82,6 +84,10 @@ Four insights shaped where I chose to work:
 
 AI came in through WhatsApp. Pre-approval did a first qualification with simple questions and answers; then an AI agent built into WhatsApp picked up the conversation, answering questions, guiding the user and understanding their particular case, while another AI pre-qualified leads in the background. Scoring run by autonomous agents was left for a later stage.
 
+::images
+- ven-con-alex/01.webp | Pre-launch page: coming soon to San Antonio
+
+
 ## Develop: designing for this context
 
 Midway, the founders reopened scope: debt and payment history, a car's ownership history, collection notices, home verifications. Each new request went through one question: does it help this specific person keep the car and keep paying? These are the decisions where the user's context changed the design.
@@ -102,6 +108,12 @@ Midway, the founders reopened scope: debt and payment history, a car's ownership
 | Wants a person, not an institution | Copy speaks as Alex ("Tell Alex a little about yourself"), a video of Alex on the landing, first names everywhere |
 | Many don't qualify alone for lack of documents, but a relative or friend does | A co-signer with a Texas ID is accepted, and the WhatsApp agent explores each case: who presents the documents and which payment plan fits |
 
+::images
+- ven-con-alex/02.webp | Pre-approval in two steps, and the rejection screen with WhatsApp
+- ven-con-alex/03.webp | Appointment confirmation, WhatsApp follow-up and document upload by phone photo
+- ven-con-alex/04.webp | Inventory with the Drive Out down payment first, and a car detail
+
+
 ## Deliver: prototype, system and handoff
 
 I built a design system and a single handoff file organized the way engineering would build: by module, then by breakpoint (mobile, tablet, desktop), with every flow laid out left to right including empty, error and edge states.
@@ -116,6 +128,12 @@ I built a design system and a single handoff file organized the way engineering 
 1. Five remote think-aloud sessions in Spanish with people who fit the profile, on the pre-approval and first-payment flows.
 2. A quick concept test of the rejection screen: does it feel like a closed door or a next step?
 3. Funnel analytics from day one, so the first weeks in production work as the test.
+
+::images
+- ven-con-alex/05.webp | Customer dashboard on desktop
+- ven-con-alex/06.webp | Make a payment, Your car documents and Services
+- ven-con-alex/07.webp | Incident report, sign up and log in with the phone number
+
 
 ## Outcome and how to measure it
 

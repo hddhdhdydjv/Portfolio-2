@@ -33,7 +33,10 @@ export default defineNuxtConfig({
         { rel: 'preload', href: '/fonts/geist-pixel.woff2', as: 'font', type: 'font/woff2', crossorigin: '' },
       ],
       // Marks JS as available so reveal states only hide content when animations can run.
-      script: [{ innerHTML: "document.documentElement.classList.add('js')", tagPosition: 'head' }],
+      script: [{
+        innerHTML: "document.documentElement.classList.add('js');try{if(sessionStorage.getItem('pixel-loader')==='1')document.documentElement.classList.add('loader-seen')}catch(e){}",
+        tagPosition: 'head',
+      }],
     },
   },
 

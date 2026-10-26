@@ -117,6 +117,9 @@
             "table_block": {
               "type": "SharedSlice"
             },
+            "scroll_scramble": {
+              "type": "SharedSlice"
+            },
             "quote": {
               "type": "SharedSlice"
             }
