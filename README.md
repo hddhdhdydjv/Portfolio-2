@@ -75,4 +75,6 @@ Una vez migrado, **Prismic es la fuente de verdad**: los cambios se hacen ahí.
 
 ## Deploy
 
+`vercel.json` hoy construye con el contenido local (`npm run build:mock`). Cuando el contenido esté en Prismic, cambiá `buildCommand` a `npm run build`.
+
 En Vercel funciona sin configuración. Las páginas se cachean con ISR de 60 s, así que lo que publicás en Prismic aparece en el sitio en un minuto, sin redeploy.
