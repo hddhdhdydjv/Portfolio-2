@@ -1,0 +1,95 @@
+/* ---------------------------------------------------------------------------
+   Fonts
+   ------------------------------------------------------------------------- */
+@font-face { font-family: 'PP Mondwest'; src: url('/fonts/pp-mondwest-regular.woff2') format('woff2'); font-weight: 400; font-display: swap; }
+@font-face { font-family: 'Geist Pixel'; src: url('/fonts/geist-pixel.woff2') format('woff2'); font-weight: 400; font-display: swap; }
+@font-face { font-family: 'Fasthand'; src: url('/fonts/fasthand.woff2') format('woff2'); font-weight: 400; font-display: swap; }
+@font-face { font-family: 'Fragment Mono'; src: url('/fonts/fragment-mono.woff2') format('woff2'); font-weight: 400; font-display: swap; }
+@font-face { font-family: 'Inter'; src: url('/fonts/inter.woff2') format('woff2'); font-weight: 600; font-display: swap; }
+
+/* ---------------------------------------------------------------------------
+   Tokens
+   ------------------------------------------------------------------------- */
+:root {
+  --bg: #1c1c1c;
+  --surface: #474747;
+  --text: #ededed;
+  --text-2: #d4d4d4;
+  --muted: #a1a1a1;
+  --line: #474747;
+  --light: #ededed;
+  --ink: #1c1c1c;
+
+  --font-display: 'PP Mondwest', 'Times New Roman', serif;
+  --font-body: 'Geist Pixel', ui-monospace, monospace;
+  --font-title: 'Inter', system-ui, sans-serif;
+  --font-hand: 'Fasthand', cursive;
+
+  --pad: 48px;
+  --side-w: 328px;
+  --main-x: 500px;
+  --radius: 12px;
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+
+  color-scheme: dark;
+}
+
+/* The original scales every type size from the root: 16px / 14px / 12px. */
+html { font-size: 16px; }
+@media (max-width: 1199.98px) { html { font-size: 14px; } :root { --main-x: 400px; } }
+@media (max-width: 809.98px) { html { font-size: 12px; } :root { --pad: 16px; } }
+
+/* ---------------------------------------------------------------------------
+   Base
+   ------------------------------------------------------------------------- */
+*, *::before, *::after { box-sizing: border-box; }
+html, body { margin: 0; background: var(--bg); color: var(--text); }
+body {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.2;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+h1, h2, h3, h4, p, ul, ol, figure, blockquote { margin: 0; }
+ul, ol { padding: 0; }
+a { color: inherit; text-decoration: none; }
+img, video, canvas { display: block; max-width: 100%; }
+button { font: inherit; color: inherit; background: none; border: 0; padding: 0; cursor: pointer; }
+::selection { background: var(--text); color: var(--ink); }
+:focus-visible { outline: 1px solid var(--text); outline-offset: 3px; border-radius: 6px; }
+
+/* Lenis */
+html.lenis, html.lenis body { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
+.lenis.lenis-stopped { overflow: hidden; }
+
+/* ---------------------------------------------------------------------------
+   Type
+   ------------------------------------------------------------------------- */
+.t-display { font-family: var(--font-display); font-weight: 400; font-size: 4rem; line-height: 1; letter-spacing: -0.01em; color: var(--text); text-wrap: balance; }
+.t-section { font-family: var(--font-body); font-weight: 400; font-size: 1.7rem; line-height: 1.1; letter-spacing: -0.02em; color: var(--text-2); }
+.t-title { font-family: var(--font-title); font-weight: 600; font-size: 2.5rem; line-height: 1.1; letter-spacing: -0.04em; color: var(--text-2); }
+.t-lead { font-size: 1.2rem; line-height: 1.2; color: var(--text); }
+.t-label { font-size: 1rem; line-height: 1.2; color: var(--muted); }
+
+/* ---------------------------------------------------------------------------
+   Reveal initial states (only when JS runs and motion is allowed)
+   ------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: no-preference) {
+  html.js [data-reveal]:not([data-revealed]) { opacity: 0; }
+}
+
+/* ---------------------------------------------------------------------------
+   Rich text used inside case studies and the about page
+   ------------------------------------------------------------------------- */
+.prose { font-size: 1.2rem; line-height: 1.2; color: var(--text); }
+.prose > * + * { margin-top: 1.25em; }
+.prose p + p { margin-top: 2.45em; }
+.prose strong { font-weight: 700; }
+.prose em { font-style: italic; }
+.prose a { text-decoration: underline; text-underline-offset: 3px; text-decoration-color: var(--muted); }
+.prose a:hover { text-decoration-color: var(--text); }
+.prose ul, .prose ol { padding-left: 1.3em; display: grid; gap: 0.6em; }
+.prose li::marker { color: var(--muted); }
+.prose h3 { font-size: 1.2rem; color: var(--text-2); }

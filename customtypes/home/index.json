@@ -1,0 +1,171 @@
+{
+  "id": "home",
+  "label": "Home",
+  "format": "page",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "heading": {
+        "type": "Text",
+        "config": {
+          "label": "Heading",
+          "placeholder": "I’m Alejandro Arab, and I design digital things"
+        }
+      },
+      "featured_heading": {
+        "type": "Text",
+        "config": {
+          "label": "Featured work heading",
+          "placeholder": ""
+        }
+      },
+      "see_all_label": {
+        "type": "Text",
+        "config": {
+          "label": "See all projects label",
+          "placeholder": ""
+        }
+      },
+      "skills_heading": {
+        "type": "Text",
+        "config": {
+          "label": "Skills heading",
+          "placeholder": ""
+        }
+      },
+      "skills": {
+        "type": "Group",
+        "config": {
+          "label": "Skills",
+          "repeat": true,
+          "fields": {
+            "label": {
+              "type": "Text",
+              "config": {
+                "label": "Skill",
+                "placeholder": ""
+              }
+            }
+          }
+        }
+      },
+      "stack_heading": {
+        "type": "Text",
+        "config": {
+          "label": "Tech stack heading",
+          "placeholder": ""
+        }
+      },
+      "stack": {
+        "type": "Group",
+        "config": {
+          "label": "Tech stack",
+          "repeat": true,
+          "fields": {
+            "name": {
+              "type": "Text",
+              "config": {
+                "label": "Name",
+                "placeholder": ""
+              }
+            },
+            "icon": {
+              "type": "Image",
+              "config": {
+                "label": "Icon (square)",
+                "constraint": {},
+                "thumbnails": []
+              }
+            },
+            "link": {
+              "type": "Link",
+              "config": {
+                "label": "Link",
+                "placeholder": "",
+                "allowTargetBlank": true
+              }
+            }
+          }
+        }
+      },
+      "experience_heading": {
+        "type": "Text",
+        "config": {
+          "label": "Experience heading",
+          "placeholder": ""
+        }
+      },
+      "experience": {
+        "type": "Group",
+        "config": {
+          "label": "Experience",
+          "repeat": true,
+          "fields": {
+            "role": {
+              "type": "Text",
+              "config": {
+                "label": "Role",
+                "placeholder": ""
+              }
+            },
+            "period": {
+              "type": "Text",
+              "config": {
+                "label": "Period",
+                "placeholder": ""
+              }
+            },
+            "description": {
+              "type": "StructuredText",
+              "config": {
+                "label": "Description",
+                "placeholder": "",
+                "allowTargetBlank": true,
+                "multi": "paragraph,strong,em,hyperlink"
+              }
+            },
+            "company": {
+              "type": "Text",
+              "config": {
+                "label": "Company",
+                "placeholder": ""
+              }
+            },
+            "location": {
+              "type": "Text",
+              "config": {
+                "label": "Location",
+                "placeholder": ""
+              }
+            }
+          }
+        }
+      }
+    },
+    "SEO & Metadata": {
+      "meta_title": {
+        "type": "Text",
+        "config": {
+          "label": "Meta title",
+          "placeholder": "Title shown in search results and social shares"
+        }
+      },
+      "meta_description": {
+        "type": "Text",
+        "config": {
+          "label": "Meta description",
+          "placeholder": "One or two sentences for search results"
+        }
+      },
+      "meta_image": {
+        "type": "Image",
+        "config": {
+          "label": "Meta image (1200×630)",
+          "constraint": {},
+          "thumbnails": []
+        }
+      }
+    }
+  }
+}

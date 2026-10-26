@@ -1,0 +1,130 @@
+{
+  "id": "settings",
+  "label": "Settings",
+  "format": "custom",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "site_title": {
+        "type": "Text",
+        "config": {
+          "label": "Site title",
+          "placeholder": ""
+        }
+      },
+      "site_description": {
+        "type": "Text",
+        "config": {
+          "label": "Site description",
+          "placeholder": ""
+        }
+      },
+      "name": {
+        "type": "Text",
+        "config": {
+          "label": "Name",
+          "placeholder": ""
+        }
+      },
+      "role_line": {
+        "type": "Text",
+        "config": {
+          "label": "Role line",
+          "placeholder": "Product Designer"
+        }
+      },
+      "experience_line": {
+        "type": "Text",
+        "config": {
+          "label": "Experience line",
+          "placeholder": "+6 years of experience"
+        }
+      },
+      "avatar": {
+        "type": "Image",
+        "config": {
+          "label": "Sidebar portrait (rendered as animated ASCII)",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "email": {
+        "type": "Text",
+        "config": {
+          "label": "Email",
+          "placeholder": ""
+        }
+      },
+      "linkedin": {
+        "type": "Link",
+        "config": {
+          "label": "LinkedIn",
+          "placeholder": "",
+          "allowTargetBlank": true
+        }
+      }
+    },
+    "Navigation": {
+      "nav_home": {
+        "type": "Text",
+        "config": {
+          "label": "Home label",
+          "placeholder": ""
+        }
+      },
+      "nav_projects": {
+        "type": "Text",
+        "config": {
+          "label": "Projects label",
+          "placeholder": ""
+        }
+      },
+      "nav_about": {
+        "type": "Text",
+        "config": {
+          "label": "About label",
+          "placeholder": ""
+        }
+      },
+      "nav_email": {
+        "type": "Text",
+        "config": {
+          "label": "Email label",
+          "placeholder": ""
+        }
+      },
+      "language_switch": {
+        "type": "Text",
+        "config": {
+          "label": "Language switch label",
+          "placeholder": "ES"
+        }
+      }
+    },
+    "Footer": {
+      "footer_heading": {
+        "type": "Text",
+        "config": {
+          "label": "Footer heading",
+          "placeholder": "Let’s get in touch"
+        }
+      },
+      "footer_cta": {
+        "type": "Text",
+        "config": {
+          "label": "Footer button",
+          "placeholder": "Email me"
+        }
+      },
+      "footer_cat": {
+        "type": "Image",
+        "config": {
+          "label": "Footer cat (transparent PNG/WebP)",
+          "constraint": {},
+          "thumbnails": []
+        }
+      }
+    }
+  }
+}

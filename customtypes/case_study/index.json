@@ -1,0 +1,152 @@
+{
+  "id": "case_study",
+  "label": "Case study",
+  "format": "page",
+  "repeatable": true,
+  "status": true,
+  "json": {
+    "Main": {
+      "uid": {
+        "type": "UID",
+        "config": {
+          "label": "UID",
+          "placeholder": "url-of-the-page"
+        }
+      },
+      "title": {
+        "type": "Text",
+        "config": {
+          "label": "Title",
+          "placeholder": "Brikka"
+        }
+      },
+      "summary": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Summary",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "multi": "paragraph,strong,em,hyperlink"
+        }
+      },
+      "cover": {
+        "type": "Image",
+        "config": {
+          "label": "Cover image (shown at the top of the case)",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "thumbnail": {
+        "type": "Image",
+        "config": {
+          "label": "Thumbnail (shown in project lists, 16:9)",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "role": {
+        "type": "Text",
+        "config": {
+          "label": "Role",
+          "placeholder": "Product Designer"
+        }
+      },
+      "problem": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Problem",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "multi": "paragraph,strong,em,hyperlink"
+        }
+      },
+      "results": {
+        "type": "Group",
+        "config": {
+          "label": "Results",
+          "repeat": true,
+          "fields": {
+            "item": {
+              "type": "Text",
+              "config": {
+                "label": "Result",
+                "placeholder": ""
+              }
+            }
+          }
+        }
+      },
+      "featured": {
+        "type": "Boolean",
+        "config": {
+          "label": "Show on home page",
+          "default_value": true,
+          "placeholder_true": "Yes",
+          "placeholder_false": "No"
+        }
+      },
+      "order": {
+        "type": "Number",
+        "config": {
+          "label": "Order (lower shows first)",
+          "placeholder": "1"
+        }
+      },
+      "sidebar_heading": {
+        "type": "Text",
+        "config": {
+          "label": "Sidebar heading",
+          "placeholder": "One of those digital things"
+        }
+      },
+      "slices": {
+        "type": "Slices",
+        "fieldset": "Slice Zone",
+        "config": {
+          "choices": {
+            "text_section": {
+              "type": "SharedSlice"
+            },
+            "image_stack": {
+              "type": "SharedSlice"
+            },
+            "image_ticker": {
+              "type": "SharedSlice"
+            },
+            "table_block": {
+              "type": "SharedSlice"
+            },
+            "quote": {
+              "type": "SharedSlice"
+            }
+          }
+        }
+      }
+    },
+    "SEO & Metadata": {
+      "meta_title": {
+        "type": "Text",
+        "config": {
+          "label": "Meta title",
+          "placeholder": "Title shown in search results and social shares"
+        }
+      },
+      "meta_description": {
+        "type": "Text",
+        "config": {
+          "label": "Meta description",
+          "placeholder": "One or two sentences for search results"
+        }
+      },
+      "meta_image": {
+        "type": "Image",
+        "config": {
+          "label": "Meta image (1200×630)",
+          "constraint": {},
+          "thumbnails": []
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "id": "image_ticker",
+  "type": "SharedSlice",
+  "name": "ImageTicker",
+  "description": "Two columns of images that scroll in opposite directions",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "left_images": {
+          "type": "Group",
+          "config": {
+            "label": "Left column",
+            "repeat": true,
+            "fields": {
+              "image": {
+                "type": "Image",
+                "config": {
+                  "label": "Image",
+                  "constraint": {},
+                  "thumbnails": []
+                }
+              }
+            }
+          }
+        },
+        "right_images": {
+          "type": "Group",
+          "config": {
+            "label": "Right column",
+            "repeat": true,
+            "fields": {
+              "image": {
+                "type": "Image",
+                "config": {
+                  "label": "Image",
+                  "constraint": {},
+                  "thumbnails": []
+                }
+              }
+            }
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

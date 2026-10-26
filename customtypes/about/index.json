@@ -1,0 +1,100 @@
+{
+  "id": "about",
+  "label": "About",
+  "format": "page",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "heading": {
+        "type": "Text",
+        "config": {
+          "label": "Heading",
+          "placeholder": "Get to know me a little better"
+        }
+      },
+      "intro": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Intro",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "multi": "paragraph,strong,em,hyperlink"
+        }
+      },
+      "polaroids": {
+        "type": "Group",
+        "config": {
+          "label": "Polaroids",
+          "repeat": true,
+          "fields": {
+            "photo": {
+              "type": "Image",
+              "config": {
+                "label": "Photo",
+                "constraint": {},
+                "thumbnails": []
+              }
+            },
+            "caption": {
+              "type": "Text",
+              "config": {
+                "label": "Caption",
+                "placeholder": "Maui, Hawaii '25"
+              }
+            }
+          }
+        }
+      },
+      "outro": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Outro",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "multi": "paragraph,strong,em,hyperlink"
+        }
+      },
+      "resume_label": {
+        "type": "Text",
+        "config": {
+          "label": "Resume label",
+          "placeholder": "Download Resume!"
+        }
+      },
+      "resume_link": {
+        "type": "Link",
+        "config": {
+          "label": "Resume link",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "allowText": false
+        }
+      }
+    },
+    "SEO & Metadata": {
+      "meta_title": {
+        "type": "Text",
+        "config": {
+          "label": "Meta title",
+          "placeholder": "Title shown in search results and social shares"
+        }
+      },
+      "meta_description": {
+        "type": "Text",
+        "config": {
+          "label": "Meta description",
+          "placeholder": "One or two sentences for search results"
+        }
+      },
+      "meta_image": {
+        "type": "Image",
+        "config": {
+          "label": "Meta image (1200×630)",
+          "constraint": {},
+          "thumbnails": []
+        }
+      }
+    }
+  }
+}

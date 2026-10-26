@@ -1,0 +1,83 @@
+{
+  "settings": {
+    "site_title": "Alejandro Arab — Product Designer",
+    "site_description": "Soy Alejandro Arab, Product Designer con más de 6 años diseñando productos digitales para healthtech, fintech, IA y Web3.",
+    "name": "Alejandro Arab",
+    "role_line": "Product Designer",
+    "experience_line": "+6 años de experiencia",
+    "email": "arab.alejandro.v@gmail.com",
+    "linkedin": "https://www.linkedin.com/in/arabalejandro/",
+    "nav_home": "Inicio",
+    "nav_projects": "Proyectos",
+    "nav_about": "Sobre mí",
+    "nav_email": "Escribime",
+    "footer_heading": "Hablemos",
+    "footer_cta": "Escribime",
+    "avatar": "site/ascii-cat-source.png | Retrato pixelado de un gato atigrado",
+    "footer_cat": "site/footer-cat.webp | Gato negro en pixel art",
+    "language_switch": "EN"
+  },
+  "home": {
+    "heading": "Soy Alejandro Arab y diseño cosas digitales",
+    "featured_heading": "Trabajos destacados",
+    "see_all_label": "Ver todos los proyectos",
+    "skills_heading": "Habilidades",
+    "skills": ["Diseño UX", "Diseño UI", "Diseño web", "Diseño de interacción", "Diseño responsive", "Prototipado", "Design Systems", "UX Research", "Variables"],
+    "stack_heading": "Herramientas",
+    "experience_heading": "Experiencia",
+    "experience": [
+      {
+        "role": "Design Lead",
+        "period": "2023 – Actualidad",
+        "description": "Lideré el diseño de más de 20 productos digitales (healthtech, fintech, e-commerce, IA, Web3), desde el discovery hasta el handoff, gestionando hasta 7 proyectos en simultáneo. Trabajé directamente con clientes y PMs para definir alcance, priorizar funcionalidades y alinear las decisiones de diseño con los objetivos del negocio. Diseñé e implementé design systems escalables con variables y componentes multiplataforma, mejorando la consistencia del equipo y la velocidad de entrega. Establecí flujos de trabajo y estándares de calidad para el área de diseño, incluidos los procesos de handoff a desarrollo. Acompañé a diseñadores junior para asegurar la calidad y consistencia de los entregables.",
+        "company": "InfinixSoft",
+        "location": "Remoto"
+      },
+      {
+        "role": "Product Designer",
+        "period": "2022 – 2023",
+        "description": "Diseñé productos web y mobile para el sector healthtech, con foco en usabilidad, accesibilidad y escalabilidad. Implementé design systems multiplataforma basados en Atomic Design. Colaboré con equipos de producto, desarrollo y marketing, iterando a partir de análisis de usabilidad y feedback de usuarios. Desarrollé prototipos de alta fidelidad para validación con clientes y pruebas de usabilidad.",
+        "company": "Traditum",
+        "location": "Remoto"
+      },
+      {
+        "role": "Profesor de Diseño UX/UI",
+        "period": "2020 – 2023",
+        "description": "Di clases de Diseño UX/UI y Prototipado (Figma / Adobe XD), con ~150 estudiantes por camada. Temas: principios de UX, pruebas de usabilidad, design systems, diseño de interacción y microinteracciones.",
+        "company": "CoderHouse",
+        "location": "Remoto"
+      }
+    ],
+    "meta_title": "Alejandro Arab — Product Designer",
+    "meta_description": "Soy Alejandro Arab y diseño cosas digitales. Product Designer con más de 6 años de experiencia."
+  },
+  "projects": {
+    "heading": "Las cosas digitales que diseño",
+    "meta_title": "Proyectos — Alejandro Arab",
+    "meta_description": "Una selección de trabajos de diseño de producto de Alejandro Arab."
+  },
+  "about": {
+    "heading": "Conoceme un poco más",
+    "intro": [
+      "Soy Ale, **Product Designer**, y en los últimos 6 años trabajé en industrias y tipos de producto muy distintos. Trabajo cerca del equipo y cerca del problema, desde las primeras decisiones hasta el handoff final. Me gusta estar en la sala donde se decide, hacer preguntas antes de que sea tarde y seguir involucrado hasta el final. También doy clases de diseño y prototipado, lo que me mantiene honesto sobre qué importa de verdad y qué es solo costumbre.",
+      "Para mí, la colaboración es donde pasa la mayor parte del trabajo real. **Paso mucho tiempo con desarrolladores, PMs y clientes, no solo entregando archivos sino resolviendo las cosas juntos.** Ya sea armando un design system, mapeando un flujo complejo o yendo y viniendo sobre una sola interacción, intento estar cerca del oficio en cada escala. Los detalles son parte del trabajo, no una ronda extra al final."
+    ],
+    "polaroids": [
+      { "image": "about/amsterdam.webp | Alejandro y Pía en una calle de Ámsterdam", "caption": "Ámsterdam, Países Bajos '24" },
+      { "image": "about/roma.webp | Roma, una gata atigrada, acostada en un rascador", "caption": "Roma '26" },
+      { "image": "about/venus.webp | Venus, una gata negra, acurrucada en una manta roja", "caption": "Venus '26" },
+      { "image": "about/maui.webp | Pía y Alejandro con sombreros junto al mar en Maui", "caption": "Maui, Hawái '25" },
+      { "image": "about/food.webp | Un plato de guiso de mariscos", "caption": "" },
+      { "image": "about/berlin.webp | Pía y Alejandro en una calle de Berlín", "caption": "Berlín, Alemania '24" },
+      { "image": "about/buenos-aires.webp | Pía y Alejandro en un jardín de Buenos Aires", "caption": "Buenos Aires, Argentina '24" },
+      { "image": "about/haleakala.webp | Alejandro sobre las nubes en el Haleakalā al atardecer", "caption": "Volcán Haleakalā, Maui, Hawái '25" }
+    ],
+    "outro": [
+      "Fuera de la pantalla, cocino, toco el bajo y sintetizadores, y viajo con mi pareja Pía cada vez que podemos. Los dos somos diseñadores, así que donde sea que terminemos solemos estar trabajando, bocetando o juntando referencias casi sin darnos cuenta. También soy muy fan de los videojuegos y mi Nintendo Switch viene en cada viaje. En casa compartimos el espacio con nuestras dos gatas, Roma y Venus, que tienen opiniones bastante firmes sobre nuestros horarios de trabajo y sobre quién usa las sillas de la oficina. Crecí con una formación en gastronomía antes de llegar al diseño, y creo que esa atención a los ingredientes, los tiempos, el proceso, la mise en place y la forma en que algo finalmente se arma es simplemente parte de cómo diseño hoy."
+    ],
+    "resume_label": "¡Descargá mi CV!",
+    "resume_url": "https://drive.google.com/drive/folders/1blY0rOa1xrZxx0CLlY5aw3JAx_gqAHE8?usp=drive_link",
+    "meta_title": "Sobre mí — Alejandro Arab",
+    "meta_description": "Product Designer que trabaja cerca del equipo y del problema, desde las primeras decisiones hasta el handoff final."
+  }
+}
