@@ -1,0 +1,230 @@
+<title>Runhappy Tumble Wall</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;700;800&display=swap">
+<style>
+  /* Layout: the 1024×576 Figma thumbnail as a scaled stage; pills are physics bodies piled on its floor */
+  :root {
+    --stage-bg: #f5f5f1;      /* Figma thumbnail background */
+    --ink: #202020;           /* wordmark, pill text, outline */
+    --pill-yellow: #fed54e;
+    --pill-pink: #f98cee;
+    --pill-green: #25c17b;
+    --page-bg: #e8e8e2;
+    --page-fg: #3a3a36;
+    --page-muted: #6d6d66;
+    --font-display: "Inter Tight", "Neue Haas Grotesk Display", "Helvetica Neue", Arial, sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) { --page-bg: #141413; --page-fg: #e9e9e3; --page-muted: #9a9a92; color-scheme: dark; }
+  }
+  :root[data-theme="dark"] { --page-bg: #141413; --page-fg: #e9e9e3; --page-muted: #9a9a92; color-scheme: dark; }
+
+  html, body { min-height: 100%; }
+  body {
+    background: var(--page-bg); color: var(--page-fg);
+    font-family: var(--font-display);
+    display: grid; place-items: center;
+    padding-block: 32px;
+    padding-left: max(16px, env(safe-area-inset-left, 0px));
+    padding-right: max(16px, env(safe-area-inset-right, 0px));
+    box-sizing: border-box;
+  }
+  .wrap { width: 100%; max-width: 1024px; display: grid; gap: 14px; }
+
+  .frame { position: relative; width: 100%; aspect-ratio: 16 / 9; max-width: 100%; border-radius: 14px; overflow: hidden; background: var(--stage-bg); box-shadow: 0 1px 0 rgba(0,0,0,.04), 0 18px 50px -24px rgba(0,0,0,.35); }
+  .stage { position: absolute; left: 0; top: 0; width: 1024px; height: 576px; transform-origin: 0 0; }
+
+  .logo { position: absolute; left: 84px; top: 56px; width: 80px; height: 80px; border-radius: 6px; }
+  .wordmark {
+    position: absolute; left: 85px; top: 339px; height: 108px; margin: 0;
+    font-weight: 700; font-size: 128px; line-height: 108px; letter-spacing: -0.035em; color: var(--ink);
+    white-space: nowrap;
+  }
+  .tag {
+    position: absolute; left: 706px; top: 365px; height: 56px; box-sizing: border-box;
+    padding: 0 16px; display: flex; align-items: center;
+    border: 3px solid var(--ink); border-radius: 39px;
+    font-weight: 500; font-size: 24px; letter-spacing: 1.44px; text-transform: uppercase; color: var(--ink);
+  }
+
+  .pill {
+    position: absolute; left: 0; top: 0; width: 174px; height: 43px; margin: -21.5px 0 0 -87px;
+    border-radius: 6px; display: grid; place-items: center;
+    font-weight: 700; font-size: 30px; letter-spacing: -0.03em; line-height: 1; color: var(--ink);
+    user-select: none; -webkit-user-select: none; touch-action: none; cursor: grab;
+    will-change: transform;
+  }
+  .pill.y { background: var(--pill-yellow); }
+  .pill.p { background: var(--pill-pink); }
+  .pill.g { background: var(--pill-green); }
+  .pill.held { cursor: grabbing; }
+  .pill:focus-visible { outline: 3px solid var(--ink); outline-offset: 2px; }
+
+  .bar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px 16px; }
+  .hint { margin: 0; font-size: 14px; color: var(--page-muted); }
+  .actions { display: flex; gap: 8px; }
+  button {
+    font: 600 14px/1 var(--font-display); color: var(--page-fg); background: transparent;
+    border: 1.5px solid currentColor; border-radius: 999px; padding: 10px 16px; cursor: pointer;
+  }
+  button:hover { background: color-mix(in srgb, var(--page-fg) 8%, transparent); }
+  button:focus-visible { outline: 3px solid var(--pill-yellow); outline-offset: 2px; }
+</style>
+
+<div class="wrap">
+  <div class="frame" id="frame">
+    <div class="stage" id="stage" aria-label="Runhappy clients tool thumbnail with tumbling Runhappy pills">
+      <img class="logo" alt="Lunte" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFAAAABQCAYAAACOEfKtAAAACXBIWXMAAAPoAAAD6AG1e1JrAAAEu0lEQVR4Xu2djXHaMBSAH8Zu6bV3gQlwJsDZwBvABrABbADZgExgMkHYADIByQQhE0Du+kMhoN5zCnUcyZKR5cbkfXe6BiPs85envyeXlH78eGIQwbJsKJdtsG0bSiUr+taHZbfbwm63g/X6N7569Z4dfeE4X8BxnPjnPzyWVQ6LbTuw2axhs0GRL3F3CLFK5RvJU8BxPkGl8hUASv8EYuRZFjVXVdCV43x++blUKlHkHRmJYdO27YqsLiEA+0SrXC6L3ick4GylxBh7NY0h0kEjhyYkUBMSqAkJ1IQEakICNSGBmpBATUigJiRQExKoCQnUhARq8mpPpCgsl0uYTqfhv0i1WoWLiwuo1+uQO8wAs9mMBUHA5vM5y5Kbmxvm+z6m37jF87zwunliRGC73T7cVKfT0RY5mUxYvV4XiosXvOZisWCFFLhYLFi1WuXeVFqRDw8PiRGXVDAa85CYucAgCBJvrNfrKYnEqOP9ItIUvFbhBPoKEeO6btifiRgMBtJzoFyMMplk/EUULgJ9BYlY+v3+m893u93Ez+C541LwmqI+EusXSmC0/8J+Tyax1Wod+qro4BMvGGnj8Zgljfyiz5rsC40JTCMSm2KSvEajodRviqJ3NBqxwgpUaWZJBcWqRhD2q7xzYJ9aeIH7aMRoSyMv7fl558EWYIpc18Ku68JsNoNOpyOrCu12G0ajEbx3chW4JwiCRImNRqMQ8v6bQGQymYCIVqsFx7BPLsQ5OzuDkxJ4eXkJj4+Pwvevrq7gGObzOfd4rVaDkxF4f38Pg8FAKV2Vlru7O+5xz/PgJAQul0toNpugwng8hqwE4uBlDJYjXckyLb5eTgtvXYzHTJKbwAfBHA3LcDjkHledQCO4PhYtFU2SWxP2fZ97vN/vC5v17e0tqCJq8qLrZgbLgUCQI4w2U17zw8hURbRMVFlD6wB5NN26ws3x6mCfqYIoE3NMP/rumvD19TV3zocrkegu2vn5+Zs6T09PoMJwOOQeVx3xtWD/Ifpc133TtHhJWNUkgEqEFzICp9MpN/p6vV5me7g4ePCugZPnrK6RCDNIXRB9qnVV8njNZjP3JGoUYwIngnkZ78ZwvserKxuFk+aWeTRfo014nGJeJlqCYVorCdGaOj5AGYUZwucMCqIdMt5+iGwJpjo9Mo0xgaDYJI9Nw4sm56a3MXNpwktBYhOfolJthpjSP7b5nuzjbcuYWJzO4ESbJyFpDYvpflFCFqdOSblE3E7IEmP/W7NWq70RhhGI6XpMsYvmb1gHB5WkQQDze0kZ7SQyv132DnJ/IOkn0zy8JCtZk/0ZI4OD7MEflWdl4hyzOV9IgfssiYpE2XMvaZ7akpWsMTqIeJ4XbqTjLhxvnxf7OxxIut0ud4Tm9X2yDam8MTaI8LYccXDYDywow3i2+JQEnipGJtIfCRKoCQnUhARqQgI1IYGakEBNSKAmJFATEqgJCdSEBGpCAjWxKBmj9wXd1vPzRlaPEMDYDqzdjgQey3r9C6ztdgvPz2tZXSIGOsNUdDiI4HfDM7aN1yEEvPxhglX4cygQB5LV6idFomLkrVbfD68Pu3IoEa1iNDpOBfALuunPYcDBzXa7+Vtet9Q/nTxAWaSBnBkAAAAOdEVYdFNvZnR3YXJlAEZpZ21hnrGWYwAAAABJRU5ErkJggg==">
+      <p class="wordmark">Runhappy.</p>
+      <div class="tag">Clients tool</div>
+    </div>
+  </div>
+  <div class="bar">
+    <p class="hint" id="hint">Drag and throw the pills. Shake them with the cursor.</p>
+    <div class="actions">
+      <button type="button" id="shake">Shake</button>
+      <button type="button" id="drop">Drop again</button>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.19.0/matter.min.js"></script>
+<script>
+(() => {
+  const W = 1024, H = 576, PW = 174, PH = 43;
+  const stage = document.getElementById('stage');
+  const frame = document.getElementById('frame');
+
+  // Resting layout from Figma (node 1:407): centre x offset from 512, top, frame height, rotation (deg)
+  const FIGMA = [
+    [-121.4,513.84,60.57,5.76],[91.68,529.01,43.32,0],[477.17,542.18,43.32,0],[390.13,563.92,54.97,3.87],
+    [-157.07,569.2,59.39,-5.36],[-250.64,520.44,59.39,-5.36],[111.45,590.94,43.32,0],[-177.83,544.46,67.77,8.23],
+    [-459.63,564.44,58.83,-5.17],[-467.48,514.92,83.04,-13.61],[-346.49,507.25,83.04,-13.61],[-394.2,483.54,60.57,5.76],
+    [381.57,523.08,90.57,16.36],[289.76,496.05,71.08,-9.37],[463.91,505.28,48.26,1.63],[579.89,490.83,77.16,11.51],
+    [62.92,550.4,75.08,-10.78],[-42.42,566.57,52,2.88],[550.63,571.18,52,2.88],[-43.84,523.08,67.58,8.16],
+    [-6.93,496.71,51.13,-2.59],[659.91,564.59,67.58,8.16],[645.24,488.82,109.72,23.75],[280.36,574.47,67.58,8.16],
+    [227.64,529.01,67.58,8.16],[217.54,557.87,59.39,-5.36],[634.98,525.71,59.39,-5.36],[-321.48,569.2,43.32,0],
+    [-509.93,518.47,43.32,0],[-528.36,486.83,83.04,-13.61]
+  ];
+  const COLORS = 'yyyyypyyygyyyypyygyyyypyyyyygp'.split('');
+
+  // Scale the fixed 1024×576 stage to the frame width
+  let scale = 1;
+  const fit = () => { scale = frame.clientWidth / W; stage.style.transform = `scale(${scale})`; };
+  new ResizeObserver(fit).observe(frame); fit();
+
+  const els = FIGMA.map((f, i) => {
+    const el = document.createElement('div');
+    el.className = 'pill ' + COLORS[i];
+    el.textContent = 'Runhappy.';
+    el.setAttribute('aria-hidden', 'true');
+    stage.appendChild(el);
+    return el;
+  });
+  const place = (el, x, y, a) => { el.style.transform = `translate(${x}px, ${y}px) rotate(${a}rad)`; };
+  const restAt = () => FIGMA.forEach(([dx, top, h, r], i) => place(els[i], 512 + dx, top + h / 2, r * Math.PI / 180));
+
+  const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduced || !window.Matter) {
+    restAt();
+    document.getElementById('hint').textContent = reduced ? 'Motion is reduced, so the pills stay in their Figma layout.' : 'The physics library did not load, so the pills stay in their Figma layout.';
+    document.querySelector('.actions').hidden = true;
+    return;
+  }
+
+  const { Engine, Bodies, Body, Composite, Constraint, Runner, Events } = Matter;
+  const engine = Engine.create({ gravity: { y: 1.1 }, enableSleeping: false });
+  const world = engine.world;
+
+  // Floor sits a little below the frame so the bottom row is cropped, as in the design
+  const wallOpts = { isStatic: true, friction: 0.6 };
+  Composite.add(world, [
+    Bodies.rectangle(W / 2, H + 18 + 50, W * 3, 100, wallOpts),
+    Bodies.rectangle(-45 - 50, H / 2 - 600, 100, H * 4, wallOpts),
+    Bodies.rectangle(W + 45 + 50, H / 2 - 600, 100, H * 4, wallOpts),
+  ]);
+
+  // Hitboxes are thinner than the pills so they overlap and pile low, like the layered strip in the design
+  const bodies = els.map(() => {
+    const b = Bodies.rectangle(0, -200, PW - 16, 20, {
+      chamfer: { radius: 8 }, friction: 0.5, frictionAir: 0.012, restitution: 0.15, density: 0.0012
+    });
+    Body.setInertia(b, b.inertia * 3); // resists flipping onto an end
+    return b;
+  });
+  Composite.add(world, bodies);
+
+  const drop = () => {
+    const order = bodies.map((_, i) => i).sort(() => Math.random() - 0.5);
+    order.forEach((i, k) => {
+      const b = bodies[i];
+      Body.setPosition(b, { x: 40 + Math.random() * (W - 80), y: -80 - k * 46 - Math.random() * 30 });
+      Body.setAngle(b, (Math.random() - 0.5) * 0.5);
+      Body.setVelocity(b, { x: (Math.random() - 0.5) * 3, y: 2 + Math.random() * 2 });
+      Body.setAngularVelocity(b, (Math.random() - 0.5) * 0.03);
+    });
+  };
+  const shake = () => bodies.forEach(b => {
+    Body.setVelocity(b, { x: (Math.random() - 0.5) * 14, y: -10 - Math.random() * 10 });
+    Body.setAngularVelocity(b, (Math.random() - 0.5) * 0.3);
+  });
+
+  // Pointer → stage coordinates
+  const toStage = e => { const r = stage.getBoundingClientRect(); return { x: (e.clientX - r.left) / scale, y: (e.clientY - r.top) / scale }; };
+
+  // Drag: pin the grabbed point of the pill to the pointer with a soft constraint
+  let drag = null;
+  els.forEach((el, i) => el.addEventListener('pointerdown', e => {
+    e.preventDefault();
+    const b = bodies[i], p = toStage(e);
+    // pointB is the grab offset from the pill's centre; Matter rotates it as the pill turns
+    const c = Constraint.create({ pointA: p, bodyB: b, pointB: Matter.Vector.sub(p, b.position), stiffness: 0.2, damping: 0.1, length: 0 });
+    Composite.add(world, c);
+    drag = { c, el, id: e.pointerId };
+    el.classList.add('held'); el.style.zIndex = 50;
+    el.setPointerCapture(e.pointerId);
+  }));
+  const release = e => {
+    if (!drag || e.pointerId !== drag.id) return;
+    Composite.remove(world, drag.c); drag.el.classList.remove('held'); drag.el.style.zIndex = ''; drag = null;
+  };
+  stage.addEventListener('pointerup', release);
+  stage.addEventListener('pointercancel', release);
+
+  // Hover nudge: a mouse moving fast through the pile pushes pills aside
+  let last = null;
+  frame.addEventListener('pointermove', e => {
+    const p = toStage(e);
+    if (drag && e.pointerId === drag.id) drag.c.pointA = p;
+    if (e.pointerType === 'mouse' && !drag && last) {
+      const vx = p.x - last.x, vy = p.y - last.y, speed = Math.hypot(vx, vy);
+      if (speed > 2) bodies.forEach(b => {
+        const d = Math.hypot(b.position.x - p.x, b.position.y - p.y);
+        if (d < 110) {
+          const k = (1 - d / 110) * Math.min(speed, 40) * 0.00006 * b.mass;
+          Body.applyForce(b, b.position, { x: vx * k, y: vy * k - 0.6 * k * speed });
+        }
+      });
+    }
+    last = p;
+  });
+  frame.addEventListener('pointerleave', () => { last = null; });
+
+  // Sync DOM with physics; keep z-order stable except for the held pill
+  Events.on(engine, 'afterUpdate', () => {
+    for (let i = 0; i < bodies.length; i++) {
+      const b = bodies[i];
+      if (b.position.y > H + 400) { Body.setPosition(b, { x: W / 2, y: -100 }); Body.setVelocity(b, { x: 0, y: 0 }); }
+      place(els[i], b.position.x, b.position.y, b.angle);
+    }
+  });
+
+  document.getElementById('drop').addEventListener('click', drop);
+  document.getElementById('shake').addEventListener('click', shake);
+
+  drop();
+  Runner.run(Runner.create(), engine);
+})();
+</script>
